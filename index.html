@@ -20,7 +20,67 @@
 </head>
 
 <body>
+    <!-- Home screen display -->
+    <div id="home-screen">
+        <h1>Hogwarts<br>History</h1>
+        <div class="logo-image"></div>
+        <main>
+            <h2>Introduction</h2>
+            <p>
+                Greetings, wizards, witches, and muggles alike! Have you read the textbook called "Hogwarts: A History"
+                yet? If you have, would you care to test your knowledge and answer ten trivia questions?
+            </p>
+        </main>
+        <div class="controls">
+            <button id='start-btn' class="btn start-btn">Start</button>
+        </div>
+    </div>
 
+    <!-- Quiz screen display -->
+    <div id="quiz-screen">
+        <div class="container">
+            <div id="question-container">
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="next-btn" class="next-btn btn">Next</button>
+            <button id="quit-btn" class="quit-btn btn">Quit</button>
+        </div>
+    </div>
+
+    <!-- Results screen display -->
+    <div id="results-screen">
+        <div class="container">
+            <p id="total-score">Total score</p>
+        </div>
+        <div class="controls">
+            <button id="try-again-btn" class="try-again-btn btn">Try Again</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="github-page">
+            <a href="https://github.com/marcgithub23" target="_blank" rel="noopener"
+                aria-label="Visit my Github page (opens in a new tab)">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <p>Visit my Github page!</p>
+        </div>
+        <p>
+            Copyright © Literary Lore 2023 (for educational purposes only)
+        </p>
+    </footer>
+
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/6c37ea467e.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
