@@ -22,3 +22,14 @@ h1 {
 h2 {
     font-family: 'Changa', sans-serif;
 }
+
+/* Quiz screen display styling */
+/* Credit: Web Dev Simplified */
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: #c3a894;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
