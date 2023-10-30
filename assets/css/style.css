@@ -9,3 +9,16 @@
     padding: 0;
     margin: 0;
 }
+
+/* Global styles */
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Crimson Text', serif;
+}
+
+h2 {
+    font-family: 'Changa', sans-serif;
+}
