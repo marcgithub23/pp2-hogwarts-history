@@ -87,6 +87,34 @@ p {
 
 .controls {
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
+    margin: 20px 3px;
+    gap: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #d0bfad;
+}
+
+footer p {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.github-page {
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.github-page i {
+    font-size: 200%;
+    padding: 0 1.5rem;
+    color: #b7927c;
 }
