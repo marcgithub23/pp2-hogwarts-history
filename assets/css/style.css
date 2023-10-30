@@ -13,6 +13,10 @@
 /* Global styles */
 body {
     font-family: 'Alegreya Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd5c6
 }
 
 h1 {
@@ -32,4 +36,35 @@ h2 {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+}
+
+/* Credit: Web Dev Sinplified */
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px;
+}
+
+.btn {
+    border-style: none;
+    border-radius: 5px;
+    background-color: #aa7b63;
+    padding: 5px 10px;
+    color: #ffff;
+    outline: none;
+}
+
+.start-btn,
+.next-btn,
+.quit-btn {
+    background-color: #904e31;
+    font-size: 1.10rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
