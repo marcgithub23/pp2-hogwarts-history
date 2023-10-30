@@ -38,6 +38,16 @@ p {
     text-align: center;
 }
 
+.logo-image {
+    background: url("../images/book-stack.png") no-repeat center center / cover;
+    height: 25vw;
+    width: 25vw;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
 /* Quiz screen display styling */
 /* Credit: Web Dev Simplified */
 .container {
