@@ -44,6 +44,22 @@ function resetState() {
     }
 }
 
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const isCorrect = selectedButton.dataset.correct === "true";
+    if (isCorrect) {
+        selectedButton.classList.add("correct");
+    } else {
+        selectedButton.classList.add("wrong");
+    }
+    Array.from(answerButtonsElement.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+}
+
 // Questions and answers
 const questions = [
     {

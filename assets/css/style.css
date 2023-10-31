@@ -98,6 +98,16 @@ p {
     gap: 20px;
 }
 
+.correct {
+    background: #26f42d;
+    color: #000;
+}
+
+.wrong {
+    background: #f40f0f;
+    color: #000;
+}
+
 /* Footer styling */
 footer {
     background-color: #d0bfad;
