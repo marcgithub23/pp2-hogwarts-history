@@ -8,10 +8,12 @@ const quizScreen = document.getElementById('quiz-screen');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const resultsScreen = document.getElementById('results-screen');
+const questionProgress = document.getElementById('question-progress');
 const totalScoreElement = document.getElementById('total-score');
 
 let shuffledQuestions;
 let currentQuestionIndex;
+let questionCounter = 0;
 let score = 0;
 
 startButton.addEventListener('click', startGame);
@@ -29,6 +31,7 @@ function startGame() {
     quizScreen.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
+    questionCounter = 0;
     score = 0;
     setNextQuestion();
 }
@@ -36,6 +39,8 @@ function startGame() {
 function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
+    questionCounter++;
+    questionProgress.innerText = `Question ${questionCounter} of ${shuffledQuestions.length}`
 }
 
 function showQuestion(question) {
