@@ -1,20 +1,40 @@
 const homeScreen = document.getElementById('home-screen');
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
+const playAgainButton = document.getElementById('play-again-btn');
 const quizScreen = document.getElementById('quiz-screen');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+const resultsScreen = document.getElementById('results-screen');
+const totalScoreElement = document.getElementById('total-score');
 
 let shuffledQuestions;
 let currentQuestionIndex;
+let score = 0;
 
 startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    if (currentQuestionIndex < shuffledQuestions.length) {
+        handleNextButton();
+    }
+});
+playAgainButton.addEventListener('click', restartGame);
 
 function startGame() {
     homeScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
+    score = 0;
+    setNextQuestion();
+}
+
+function restartGame() {
+    resultsScreen.classList.add('hide');
+    quizScreen.classList.remove('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    score = 0;
     setNextQuestion();
 }
 
@@ -49,6 +69,7 @@ function selectAnswer(e) {
     const isCorrect = selectedButton.dataset.correct === "true";
     if (isCorrect) {
         selectedButton.classList.add("correct");
+        score++;
     } else {
         selectedButton.classList.add("wrong");
     }
@@ -58,6 +79,22 @@ function selectAnswer(e) {
         }
         button.disabled = true;
     });
+    nextButton.classList.remove('hide');
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < shuffledQuestions.length) {
+        setNextQuestion();
+    } else {
+        quizScreen.classList.add('hide');
+        resultsScreen.classList.remove('hide');
+        showScore();
+    }
+}
+
+function showScore() {
+    totalScoreElement.innerHTML = `You scored ${score} out of ${shuffledQuestions.length}!`;
 }
 
 // Questions and answers
