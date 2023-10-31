@@ -82,7 +82,8 @@ p {
 .start-btn,
 .next-btn,
 .quit-btn,
-.play-again-btn {
+.play-again-btn,
+.home-btn {
     background-color: #904e31;
     font-size: 1.10rem;
     font-weight: bold;

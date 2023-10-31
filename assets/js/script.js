@@ -1,6 +1,8 @@
 const homeScreen = document.getElementById('home-screen');
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
+const quitButton = document.getElementById('quit-btn');
+const homeButton = document.getElementById('home-btn');
 const playAgainButton = document.getElementById('play-again-btn');
 const quizScreen = document.getElementById('quiz-screen');
 const questionElement = document.getElementById('question');
@@ -19,18 +21,11 @@ nextButton.addEventListener('click', () => {
     }
 });
 playAgainButton.addEventListener('click', restartGame);
+quitButton.addEventListener('click', quitGame);
+homeButton.addEventListener('click', goHome);
 
 function startGame() {
     homeScreen.classList.add('hide');
-    quizScreen.classList.remove('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    score = 0;
-    setNextQuestion();
-}
-
-function restartGame() {
-    resultsScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
@@ -95,6 +90,25 @@ function handleNextButton() {
 
 function showScore() {
     totalScoreElement.innerHTML = `You scored ${score} out of ${shuffledQuestions.length}!`;
+}
+
+function restartGame() {
+    resultsScreen.classList.add('hide');
+    quizScreen.classList.remove('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    score = 0;
+    setNextQuestion();
+}
+
+function quitGame() {
+    quizScreen.classList.add('hide');
+    homeScreen.classList.remove('hide');
+}
+
+function goHome() {
+    resultsScreen.classList.add('hide');
+    homeScreen.classList.remove('hide');
 }
 
 // Questions and answers
