@@ -131,7 +131,7 @@ footer p {
 }
 
 .github-page i {
-    font-size: 200%;
+    font-size: 150%;
     padding: 0 1.5rem;
     color: #b7927c;
 }
@@ -148,11 +148,36 @@ footer p {
         max-height: 10rem;
     }
 
+    main.center {
+        max-width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
     #answer-buttons button {
         font-size: 1.2rem;
     }
 
     .controls .btn {
         font-size: 2rem;
+    }
+}
+
+/* Media query: laptop and larger devices (1024px plus) */
+@media screen and (min-width: 1024px) {
+    #answer-buttons button:hover:not([disabled]) {
+        cursor: pointer;
+        transform: scale(1.02);
+        transform: transform 100ms;
+        outline: solid #000;
+        color: #000;
+    }
+
+    .controls .btn:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+        transform: transform 100ms;
+        outline: solid #000;
+        color: #000;
     }
 }
