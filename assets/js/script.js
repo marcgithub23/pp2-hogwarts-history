@@ -204,3 +204,8 @@ const questions = [
         ]
     }
 ]
+
+// Misc HTML content variables
+const numberOfQuestions = document.getElementById('no-of-ques');
+
+numberOfQuestions.innerHTML = parseInt(questions.length);
