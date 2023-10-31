@@ -1,13 +1,22 @@
-const homeScreen = document.getElementById('home-screen')
-const startButton = document.getElementById('start-btn')
-const quizScreen = document.getElementById('quiz-screen')
+const homeScreen = document.getElementById('home-screen');
+const startButton = document.getElementById('start-btn');
+const quizScreen = document.getElementById('quiz-screen');
 
-startButton.addEventListener('click', startGame)
+let shuffledQuestions;
+let currentQuestionIndex;
+
+startButton.addEventListener('click', startGame);
 
 function startGame() {
-    homeScreen.classList.add('hide')
-    quizScreen.classList.remove('hide')
-    setNextQuestion()
+    homeScreen.classList.add('hide');
+    quizScreen.classList.remove('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    setNextQuestion();
+}
+
+function setNextQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 // Questions and answers
