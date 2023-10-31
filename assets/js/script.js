@@ -1,3 +1,15 @@
+const homeScreen = document.getElementById('home-screen')
+const startButton = document.getElementById('start-btn')
+const quizScreen = document.getElementById('quiz-screen')
+
+startButton.addEventListener('click', startGame)
+
+function startGame() {
+    homeScreen.classList.add('hide')
+    quizScreen.classList.remove('hide')
+    setNextQuestion()
+}
+
 // Questions and answers
 const questions = [
     {
