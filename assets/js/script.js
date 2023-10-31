@@ -1,5 +1,6 @@
 const homeScreen = document.getElementById('home-screen');
 const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
 const quizScreen = document.getElementById('quiz-screen');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
@@ -18,21 +19,29 @@ function startGame() {
 }
 
 function setNextQuestion() {
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
     })
+}
+
+function resetState() {
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
 }
 
 // Questions and answers
