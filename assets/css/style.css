@@ -48,6 +48,10 @@ p {
     max-height: 300px;
 }
 
+.hide {
+    display: none;
+}
+
 /* Quiz screen display styling */
 /* Credit: Web Dev Simplified */
 .container {
@@ -97,6 +101,7 @@ p {
 /* Footer styling */
 footer {
     background-color: #d0bfad;
+    margin-top: auto;
 }
 
 footer p {
