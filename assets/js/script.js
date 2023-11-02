@@ -101,6 +101,7 @@ function restartGame() {
     resultsScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
+    questionCounter = 0;
     currentQuestionIndex = 0;
     score = 0;
     setNextQuestion();
