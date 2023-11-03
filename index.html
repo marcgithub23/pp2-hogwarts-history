@@ -2,95 +2,97 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Meta tags for search engines -->
-    <meta name="description"
-        content="Hogwarts History. Multiple choice quiz on the Harry Potter series. Challenge yourself and have fun!">
-    <meta name="keywords"
-        content="Hogwarts history, literature, fiction, trivia, quiz, lore, harry potter, J.K. Rowling">
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Title -->
-    <title>Hogwarts History</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Meta tags for search engines -->
+  <meta name="description"
+    content="Hogwarts History. Multiple choice quiz on the Harry Potter series. Challenge yourself and have fun!">
+  <meta name="keywords" content="Hogwarts history, literature, fiction, trivia, quiz, lore, harry potter, J.K. Rowling">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Title -->
+  <title>Hogwarts History</title>
 </head>
 
 <body>
+  <header>
+    <h1 class="center">Hogwarts<br>History</h1>
+  </header>
+  <main>
     <!-- Home screen display -->
     <div id="home-screen">
-        <h1 class="center">Hogwarts<br>History</h1>
-        <div class="logo-image center"></div>
-        <main class="center">
-            <h2 class="hide">Introduction</h2>
-            <p>
-                Greetings, wizards, witches, and muggles alike! Have you read the textbook called "Hogwarts: A History"
-                yet? If you have, would you care to test your knowledge and answer <span id="no-of-ques">number</span>
-                trivia questions?
-            </p>
-        </main>
-        <div class="controls">
-            <button id='start-btn' class="btn start-btn">Start</button>
-        </div>
+      <div class="logo-image center"></div>
+      <div class="center">
+        <h2 class="hide">Introduction</h2>
+        <p>
+          Greetings, wizards, witches, and muggles alike! Have you read the textbook called "Hogwarts: A History"
+          yet? If you have, would you care to test your knowledge and answer <span id="no-of-ques">number</span>
+          trivia questions?
+        </p>
+      </div>
+      <div class="controls">
+        <button id='start-btn' class="btn start-btn">Start</button>
+      </div>
     </div>
 
     <!-- Quiz screen display -->
     <div id="quiz-screen" class="center hide">
-        <div class="center">
-            <p id="question-progress">Question progress</p>
+      <div class="center">
+        <p id="question-progress">Question progress</p>
+      </div>
+      <div class="container center">
+        <div id="question-container">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+          </div>
         </div>
-        <div class="container center">
-            <div id="question-container">
-                <div id="question">Question</div>
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
-                </div>
-            </div>
-        </div>
-        <div class="controls">
-            <button id="next-btn" class="next-btn btn">Next</button>
-            <button id="quit-btn" class="quit-btn btn">Quit</button>
-        </div>
+      </div>
+      <div class="controls">
+        <button id="next-btn" class="next-btn btn">Next</button>
+        <button id="quit-btn" class="quit-btn btn">Quit</button>
+      </div>
     </div>
 
     <!-- Results screen display -->
     <div id="results-screen" class="center hide">
-        <div class="container center">
-            <p id="total-score">Total score</p>
-        </div>
-        <div class="controls">
-            <button id="play-again-btn" class="play-again-btn btn">Play Again</button>
-            <button id="home-btn" class="home-btn btn">Home</button>
-        </div>
+      <div class="container center">
+        <p id="total-score">Total score</p>
+      </div>
+      <div class="controls">
+        <button id="play-again-btn" class="play-again-btn btn">Play Again</button>
+        <button id="home-btn" class="home-btn btn">Home</button>
+      </div>
     </div>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="github-page">
+      <a href="https://github.com/marcgithub23" target="_blank" rel="noopener"
+        aria-label="Visit my Github page (opens in a new tab)">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <p>Visit my Github page!</p>
+    </div>
+    <p>
+      Copyright © Hogwarts History 2023 (for educational purposes only)
+    </p>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="github-page">
-            <a href="https://github.com/marcgithub23" target="_blank" rel="noopener"
-                aria-label="Visit my Github page (opens in a new tab)">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <p>Visit my Github page!</p>
-        </div>
-        <p>
-            Copyright © Hogwarts History 2023 (for educational purposes only)
-        </p>
-    </footer>
+  <!-- Font Awesome kit -->
+  <script src="https://kit.fontawesome.com/6c37ea467e.js" crossorigin="anonymous"></script>
 
-    <!-- Font Awesome kit -->
-    <script src="https://kit.fontawesome.com/6c37ea467e.js" crossorigin="anonymous"></script>
-
-    <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
