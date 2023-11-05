@@ -20,6 +20,10 @@ body {
     background-color: #ddd5c6;
 }
 
+main {
+    flex: 1 0 auto;
+}
+
 h1 {
     font-family: 'Crimson Text', serif;
 }
