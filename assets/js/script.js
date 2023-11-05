@@ -1,4 +1,5 @@
 const homeScreen = document.getElementById('home-screen');
+const usernameInput = document.getElementById('username');
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const quitButton = document.getElementById('quit-btn');
@@ -11,22 +12,40 @@ const resultsScreen = document.getElementById('results-screen');
 const questionProgress = document.getElementById('question-progress');
 const totalScoreElement = document.getElementById('total-score');
 
+let username = "";
 let shuffledQuestions;
 let currentQuestionIndex;
 let questionCounter = 0;
 let score = 0;
 
+usernameInput.addEventListener('change', validateInput);
+
 startButton.addEventListener('click', startGame);
+
 nextButton.addEventListener('click', () => {
     if (currentQuestionIndex < shuffledQuestions.length) {
         handleNextButton();
     }
 });
+
 playAgainButton.addEventListener('click', restartGame);
+
 quitButton.addEventListener('click', quitGame);
+
 homeButton.addEventListener('click', goHome);
 
+function validateInput() {
+    username = this.value;
+    const isValid = /^[a-zA-Z0-9 ]+$/.test(username.trim())
+    if (!isValid) {
+        alert("Invalid username. Please don't use special characters.")
+    }
+}
+
 function startGame() {
+    if (username.length === 0) {
+        alert('Please enter a username.');
+    } else {
     homeScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -34,6 +53,7 @@ function startGame() {
     questionCounter = 0;
     score = 0;
     setNextQuestion();
+    }
 }
 
 function setNextQuestion() {
@@ -94,7 +114,7 @@ function handleNextButton() {
 }
 
 function showScore() {
-    totalScoreElement.innerHTML = `You scored ${score} out of ${shuffledQuestions.length}!`;
+    totalScoreElement.innerHTML = `${username}, you scored ${score} out of ${shuffledQuestions.length}!`;
 }
 
 function restartGame() {
