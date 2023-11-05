@@ -128,6 +128,7 @@ function restartGame() {
 }
 
 function quitGame() {
+    confirm("Are you sure you want to quit?");
     quizScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
 }
