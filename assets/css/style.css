@@ -21,6 +21,7 @@ body {
 }
 
 main {
+    /* Take up any surplus space */
     flex: 1 0 auto;
 }
 
@@ -72,7 +73,7 @@ p {
     box-shadow: 0 0 10px 2px;
 }
 
-/* Credit: Web Dev Sinplified */
+/* Credit: Web Dev Simplified */
 .btn-grid {
     display: grid;
     gap: 10px;
@@ -101,18 +102,20 @@ p {
 
 .controls {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px 3px;
     gap: 20px;
 }
 
+/* Credit: GreatStack */
 .correct {
     background: #26f42d;
     color: #000;
 }
 
+/* Credit: GreatStack */
 .wrong {
     background: #f40f0f;
     color: #000;
@@ -180,6 +183,9 @@ footer p {
 
 /* Media query: laptop and larger devices (1024px plus) */
 @media screen and (min-width: 1024px) {
+
+    /* Credit: Brian Design and GreatStack */
+    /* Make answer buttons interactive when hovered on before selecting their first answer */
     #answer-buttons button:hover:not([disabled]) {
         cursor: pointer;
         transform: scale(1.02);
@@ -188,14 +194,18 @@ footer p {
         color: #000;
     }
 
+    /* Credit: Web Dev Simplified */
     .btn-grid {
         display: grid;
+        /* Split into two columns to make use of extra space */
         grid-template-columns: repeat(2, auto);
         gap: 15px;
         margin: 20px;
         padding: 0 20px;
     }
 
+    /* Credit: Brian Design */
+    /* Make control buttons interactive when hovered on */
     .controls .btn:hover {
         cursor: pointer;
         transform: scale(1.02);

@@ -1,3 +1,4 @@
+// Declare const variables
 const homeScreen = document.getElementById('home-screen');
 const usernameInput = document.getElementById('username');
 const startButton = document.getElementById('start-btn');
@@ -12,16 +13,21 @@ const resultsScreen = document.getElementById('results-screen');
 const questionProgress = document.getElementById('question-progress');
 const totalScoreElement = document.getElementById('total-score');
 
+// Declare let variables
 let username = "";
 let shuffledQuestions;
 let currentQuestionIndex;
 let questionCounter = 0;
 let score = 0;
 
+// Event listeners
+// Credit: Juliia Konovalova, my mentor
 usernameInput.addEventListener('change', validateInput);
 
+// Credit: Web Dev Simplified
 startButton.addEventListener('click', startGame);
 
+// Credit: GreatStack
 nextButton.addEventListener('click', () => {
     if (currentQuestionIndex < shuffledQuestions.length) {
         handleNextButton();
@@ -34,28 +40,45 @@ quitButton.addEventListener('click', quitGame);
 
 homeButton.addEventListener('click', goHome);
 
+// Define functions needed to run web quiz app
+
+/**
+ * Validate username input to exclude front and end trailing spaces and special characters
+ */
 function validateInput() {
     username = this.value;
+    // Credit: Usman Haider and Stack Overflow
     const isValid = /^[a-zA-Z0-9 ]+$/.test(username.trim())
     if (!isValid) {
         alert("Invalid username. Please don't use special characters.")
     }
 }
 
+// Credit: Web Dev Simplified
+/**
+ * Start quiz when a username is entered
+ */
 function startGame() {
+    // Credit: Juliia Konovalova, my mentor
     if (username.length === 0) {
         alert('Please enter a username.');
     } else {
-    homeScreen.classList.add('hide');
-    quizScreen.classList.remove('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    questionCounter = 0;
-    score = 0;
-    setNextQuestion();
+        homeScreen.classList.add('hide');
+        quizScreen.classList.remove('hide');
+        // Shuffle question order
+        shuffledQuestions = questions.sort(() => Math.random() - .5);
+        // Initialise question index, counter, and score to 0 at the start of quiz
+        currentQuestionIndex = 0;
+        questionCounter = 0;
+        score = 0;
+        setNextQuestion();
     }
 }
 
+// Credit: Web Dev Simplified
+/**
+ * Set next question with a reset state, show question, increase question counter, and update question progress
+ */
 function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -63,76 +86,121 @@ function setNextQuestion() {
     questionProgress.innerText = `Question ${questionCounter} of ${shuffledQuestions.length}`
 }
 
+// Credit: Web Dev Simplified
+/**
+ * Show question and answer options from "questions" const array variable
+ */
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
+        // Create a button element
         const button = document.createElement('button');
+        // Insert answer option text from "questions" const array variable into each button created
         button.innerText = answer.text;
+        // Apply btn class css styling
         button.classList.add('btn');
         if (answer.correct) {
+            // Set custom data attribute of button to correct if answer option is correct
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer);
+        // Add created buttons with inserted answer options to answer buttons div
         answerButtonsElement.appendChild(button);
+        button.addEventListener('click', selectAnswer);
     })
 }
 
+// Credit: Web Dev Simplified
+/**
+ * Reset to a state of hidden next button and no answer button options
+ */
 function resetState() {
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
+        // Remove any existing answer button options to reset to a blank state to set for the next question
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
 }
 
+// Credit: GreatStack
+/**
+ * Execute when an answer button is selected
+ */
 function selectAnswer(e) {
     const selectedButton = e.target;
     const isCorrect = selectedButton.dataset.correct === "true";
     if (isCorrect) {
+        // If selected answer is correct, apply correct class css styling and increase score by 1
         selectedButton.classList.add("correct");
         score++;
     } else {
+        // Otherwise apply wrong class css styling
         selectedButton.classList.add("wrong");
     }
     Array.from(answerButtonsElement.children).forEach(button => {
+        // Apply correct class css styling to the correct answer option button if it wasn't already selected by user as their answer
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
+        // Prevent users from selecting another answer once they've selected their first answer
         button.disabled = true;
     });
     nextButton.classList.remove('hide');
 }
 
+// Credit: GreatStack
+/**
+ * Handle next button functionality depending on question progress
+ */
 function handleNextButton() {
+    // Increment question index when next button is clicked
     currentQuestionIndex++;
     if (currentQuestionIndex < shuffledQuestions.length) {
+        // Continue quiz if the current question just answered is not the last question
         setNextQuestion();
     } else {
+        // Otherwise continue to results screen display and show score
         quizScreen.classList.add('hide');
         resultsScreen.classList.remove('hide');
         showScore();
     }
 }
 
+// Credit: GreatStack
+/**
+ * Show total score achieved with a template literal message
+ */
 function showScore() {
     totalScoreElement.innerHTML = `${username}, you scored ${score} out of ${shuffledQuestions.length}!`;
 }
 
+/**
+ * Restart game and re-initialise question counter, index, and score back to 0
+ */
 function restartGame() {
     resultsScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
+    // Reshuffle questions
     shuffledQuestions = questions.sort(() => Math.random() - .5);
+    // Re-initialise question index, counter, and score to 0
     questionCounter = 0;
     currentQuestionIndex = 0;
     score = 0;
     setNextQuestion();
 }
 
+/**
+ * Quit game at any point of the quiz and go back to home screen display with a confirmation message
+ */
 function quitGame() {
+    // Credit: W3Schools
     confirm("Are you sure you want to quit?");
     quizScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
 }
 
+/**
+ * Go back to home screen display from the results screen display
+ */
 function goHome() {
     resultsScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
@@ -233,6 +301,6 @@ const questions = [
 ]
 
 // Misc HTML content variables
+// Number will automatically match if questions will be added or removed in future updates; Credit: Stack Overflow
 const numberOfQuestions = document.getElementById('no-of-ques');
-
 numberOfQuestions.innerHTML = parseInt(questions.length);
