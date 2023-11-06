@@ -53,6 +53,10 @@ p {
     max-height: 300px;
 }
 
+.text-input {
+    text-align: center;
+}
+
 .hide {
     display: none;
 }
@@ -158,6 +162,13 @@ footer p {
         text-align: center;
     }
 
+    .text-input {
+        width: 15rem;
+        height: 2rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
     #answer-buttons button {
         font-size: 1.2rem;
     }
@@ -175,6 +186,14 @@ footer p {
         transform: transform 100ms;
         outline: solid #000;
         color: #000;
+    }
+
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 15px;
+        margin: 20px;
+        padding: 0 20px;
     }
 
     .controls .btn:hover {
