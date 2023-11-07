@@ -33,23 +33,28 @@
     <!-- Main content -->
     <main>
         <!-- Home screen display -->
-        <div id="home-screen">
+        <section id="home-screen">
             <div class="center">
                 <h2 class="hide">Introduction</h2>
                 <p>
                     Greetings, wizards, witches, and muggles alike! Have you read the textbook called "Hogwarts: A History" yet?
                     If you have, would you care to test your knowledge and answer <span id="no-of-ques">number</span> trivia questions?
                 </p>
+                <p>
+                    Please enter a username below (consisting of alphanumeric values, i.e., letters
+                    and numbers only) to start the quiz!
+                </p>
             </div>
             <div class="controls">
-                <label for="username">Username</label>
+                <label for="username">Username:</label>
                 <input type="text" name="username" id="username" class="text-input" placeholder="Enter username">
                 <button id='start-btn' class="btn start-btn">Start</button>
             </div>
-        </div>
+        </section>
 
         <!-- Quiz screen display -->
-        <div id="quiz-screen" class="center hide">
+        <section id="quiz-screen" class="center hide">
+            <h2 class="hide">Quiz</h2>
             <div class="center">
                 <p id="question-progress">Question progress</p>
             </div>
@@ -68,10 +73,11 @@
                 <button id="next-btn" class="next-btn btn">Next</button>
                 <button id="quit-btn" class="quit-btn btn">Quit</button>
             </div>
-        </div>
+        </section>
 
         <!-- Results screen display -->
-        <div id="results-screen" class="center hide">
+        <section id="results-screen" class="center hide">
+            <h2 class="hide">Results</h2>
             <div class="container center">
                 <p id="total-score">Total score</p>
             </div>
@@ -79,7 +85,7 @@
                 <button id="play-again-btn" class="play-again-btn btn">Play Again</button>
                 <button id="home-btn" class="home-btn btn">Home</button>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
