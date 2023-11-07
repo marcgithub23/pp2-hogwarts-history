@@ -196,6 +196,7 @@ function quitGame() {
     confirm("Are you sure you want to quit?");
     quizScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
+    usernameInput.value = "";
 }
 
 /**
@@ -204,6 +205,7 @@ function quitGame() {
 function goHome() {
     resultsScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
+    usernameInput.value = "";
 }
 
 // Questions and answers
