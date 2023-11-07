@@ -1,5 +1,6 @@
 // Declare const variables
 const homeScreen = document.getElementById('home-screen');
+const numberOfQuestions = document.getElementById('no-of-ques');
 const usernameInput = document.getElementById('username');
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
@@ -23,26 +24,29 @@ let percent;
 let message;
 
 // Event listeners
-// Credit: Juliia Konovalova, my mentor
-usernameInput.addEventListener('change', validateInput);
+document.addEventListener('DOMContentLoaded', function() {
+    // Number will automatically match if questions will be added or removed in future updates; Credit: Stack Overflow
+    numberOfQuestions.innerHTML = parseInt(questions.length);
+    
+    // Credit: Juliia Konovalova, my mentor
+    usernameInput.addEventListener('change', validateInput);
 
-// Credit: Web Dev Simplified
-startButton.addEventListener('click', startGame);
+    startButton.addEventListener('click', startGame);
 
-// Credit: GreatStack
-nextButton.addEventListener('click', () => {
-    if (currentQuestionIndex < shuffledQuestions.length) {
-        handleNextButton();
-    }
+    nextButton.addEventListener('click', () => {
+        if (currentQuestionIndex < shuffledQuestions.length) {
+            handleNextButton();
+        }
+    });
+
+    playAgainButton.addEventListener('click', restartGame);
+
+    quitButton.addEventListener('click', quitGame);
+
+    homeButton.addEventListener('click', goHome);
 });
 
-playAgainButton.addEventListener('click', restartGame);
-
-quitButton.addEventListener('click', quitGame);
-
-homeButton.addEventListener('click', goHome);
-
-// Define functions needed to run web quiz app
+// Functions
 
 /**
  * Validate username input to exclude front and end trailing spaces and special characters
@@ -56,12 +60,10 @@ function validateInput() {
     }
 }
 
-// Credit: Web Dev Simplified
 /**
- * Start quiz when a username is entered
+ * Start quiz when a username is entered; Credit: Web Dev Simplified
  */
 function startGame() {
-    // Credit: Juliia Konovalova, my mentor
     if (username.length === 0) {
         alert('Please enter a username.');
     } else {
@@ -77,7 +79,6 @@ function startGame() {
     }
 }
 
-// Credit: Web Dev Simplified
 /**
  * Set next question with a reset state, show question, increase question counter, and update question progress
  */
@@ -88,7 +89,6 @@ function setNextQuestion() {
     questionProgress.innerText = `Question ${questionCounter} of ${shuffledQuestions.length}`
 }
 
-// Credit: Web Dev Simplified
 /**
  * Show question and answer options from "questions" const array variable
  */
@@ -111,7 +111,6 @@ function showQuestion(question) {
     })
 }
 
-// Credit: Web Dev Simplified
 /**
  * Reset to a state of hidden next button and no answer button options
  */
@@ -123,9 +122,8 @@ function resetState() {
     }
 }
 
-// Credit: GreatStack
 /**
- * Execute when an answer button is selected
+ * Execute when an answer button is selected; Credit: GreatStack
  */
 function selectAnswer(e) {
     const selectedButton = e.target;
@@ -149,7 +147,6 @@ function selectAnswer(e) {
     nextButton.classList.remove('hide');
 }
 
-// Credit: GreatStack
 /**
  * Handle next button functionality depending on question progress
  */
@@ -167,7 +164,6 @@ function handleNextButton() {
     }
 }
 
-// Credit: GreatStack
 /**
  * Show total score achieved with a template literal message
  */
@@ -325,8 +321,3 @@ const questions = [
         ]
     }
 ]
-
-// Misc HTML content variables
-// Number will automatically match if questions will be added or removed in future updates; Credit: Stack Overflow
-const numberOfQuestions = document.getElementById('no-of-ques');
-numberOfQuestions.innerHTML = parseInt(questions.length);
