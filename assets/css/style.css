@@ -127,10 +127,15 @@ footer {
     margin-top: auto;
 }
 
-footer p {
+footer p,
+.visit-github {
     font-size: 0.75rem;
     text-align: center;
     padding-bottom: 5px;
+}
+
+.visit-github:visited {
+    color: inherit;
 }
 
 .github-page {
@@ -190,6 +195,10 @@ footer p {
 
 /* Media query: laptop and larger devices (1024px plus) */
 @media screen and (min-width: 1024px) {
+    .github-page i:hover,
+    .visit-github:hover {
+        color: #904e31;
+    } 
 
     /* Credit: Brian Design and GreatStack */
     /* Make answer buttons interactive when hovered on before selecting their first answer */
