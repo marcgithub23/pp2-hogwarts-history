@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Declare const variables
 const homeScreen = document.getElementById('home-screen');
 const numberOfQuestions = document.getElementById('no-of-ques');
