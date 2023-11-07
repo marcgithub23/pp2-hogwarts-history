@@ -147,6 +147,13 @@ footer p {
     color: #b7927c;
 }
 
+/* Results screen display styling */
+#total-score {
+    text-align: left;
+    padding: 0 5px;
+    margin: 10px 5px;
+}
+
 /* Mobile-first design */
 /* Media query: tablets and larger devices (768px plus) */
 @media screen and (min-width: 768px) {
@@ -212,5 +219,11 @@ footer p {
         transform: transform 100ms;
         outline: solid #000;
         color: #000;
+    }
+
+    #total-score {
+        text-align: left;
+        padding: 0 30px;
+        margin: 10px 30px;
     }
 }

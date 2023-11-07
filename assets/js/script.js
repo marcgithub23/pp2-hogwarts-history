@@ -19,6 +19,8 @@ let shuffledQuestions;
 let currentQuestionIndex;
 let questionCounter = 0;
 let score = 0;
+let percent;
+let message;
 
 // Event listeners
 // Credit: Juliia Konovalova, my mentor
@@ -170,7 +172,29 @@ function handleNextButton() {
  * Show total score achieved with a template literal message
  */
 function showScore() {
-    totalScoreElement.innerHTML = `${username}, you scored ${score} out of ${shuffledQuestions.length}!`;
+    let rawPercent = (score / shuffledQuestions.length) * 100;
+    percent = Math.round(rawPercent);
+    if (percent < 40) {
+        message = "you failed, better luck next time!";
+    } else if (percent >= 40 && percent <= 44) {
+        message = "you passed, but you can do better!";
+    } else if (percent >= 45 && percent <= 49) {
+        message = "you achieved Third Class Honours, but there's room for improvement!";
+    } else if (percent >= 50 && percent <= 59) {
+        message = "you achieved Lower Second Class Honours, well done!";
+    } else if (percent >= 60 && percent <= 69) {
+        message = "you achieved Upper Second Class Honours, excellent job!";
+    } else if (percent >= 70 && percent <=99) {
+        message = "you achieved First Class Honours, stellar job!";
+    } else if (percent === 100) {
+        message = "you achieved a perfect grade, perfect job!";
+    }
+    totalScoreElement.innerHTML = `Dear ${username},<br>
+    Thank you for taking the quiz. Please find below your report card.<br>
+    Student: ${username}<br>
+    Total score: ${score} out of ${shuffledQuestions.length}<br>
+    Percentage: ${percent}%<br>
+    Overall, ${message}`;
 }
 
 /**
