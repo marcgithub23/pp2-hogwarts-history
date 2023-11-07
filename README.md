@@ -1,39 +1,111 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
-
-## Codeanywhere Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Hogwarts History logo](documentation/hogwarts-history-logo.png)
 
 ---
 
-Happy coding!
+# **HOGWARTS HISTORY**
+
+The Hogwarts History web quiz app is for Potterheads, fans of the Harry Potter book series, who wish to have fun and test their knowledge of the Potterverse and the Wizarding World conjured by the author J.K. Rowling, as well as to prove to a certain Miss Hermione Granger that they have indeed read the textbook called "Hogwarts: A History".
+
+The website can be accessed by this [link](https://marcgithub23.github.io/pp2-hogwarts-history/)
+
+![Responsive mockup](documentation/responsive-mockup.png)
+
+---
+
+## USER STORIES
+
+### As a user:
+
+- I want to immediately understand how the web quiz app works without difficulty through intuitive user interface design and controls.
+- I want to know if I have entered the correct username to start the quiz and receive an alert message if not.
+- I want to get immediate feedback on whether I selected the correct answer, and if not, I want to know which one was the correct answer straight away.
+- I want to be able to click next and move on to the next question, as well as be able to quit and go back to the home screen at any point during the quiz.
+- I want to be able to know my progress during the quiz and find out which question I'm on out of the total number of questions.
+- I want to find out my total score at the end of the quiz, as well as have the ability to play again or go back to the home screen.
+
+---
+
+## Features
+
+### Home Screen Display
+
+![Home screen display](documentation/home-screen-display.png)
+
+- The header on top contains the title of the web quiz app and the logo.
+- The display contains a brief introduction on what the quiz is about, calling them to action to start the quiz and test their knowledge.
+- It contains a text input where users can enter their desired username.
+- It contains a start button to start the quiz. An alert message pops up to prompt users to enter a username if left blank. Another alert message pops up if users enter an invalid username with special characters.
+- The footer contains an icon that links to my GitHub page, which will open it in a new tab, as well as copyright and a disclaimer about educational purposes only.
+
+### Quiz Screen Display
+
+![Quiz screen display](documentation/quiz-screen-display.png)
+
+- The display contains both header and footer as the home screen.
+- It displays the quiz progress, question, buttons for four different answer options, and the next and quit buttons.
+- The next button is initially hidden and only shows when users have selected an answer.
+- If the answer selected is correct, the button changes its colour to green.
+- If the answer selected is wrong, the selected button changes its colour to red and the button containing the correct answer changes its colour to green.
+- Users cannot re-select a different answer once they have selected an answer button. They can only click the next or quit button.
+- If users click quit, an alert message pops up to ask them to confirm that they want to quit. If they click OK, they are brought back to the home screen display.
+- If users click next, the next question is displayed along with its four different answer options. The question progress also updates and hides the next button again. After answering the last question, the next button brings users to the results screen display.
+
+### Results Screen Display
+
+![Results screen display](documentation/results-screen-display.png)
+
+- The display contains both header and footer as the home and quiz screens.
+- It contains a template literal message that includes the entered username and the total score achieved out of the total questions.
+- It contains a play again button that will restart the quiz, reshuffle the questions, and re-initialise the quiz progress and score to 1 and 0 respectively.
+- It also contains a home button that will bring users back to the home screen.
+
+---
+
+## Flowchart
+
+The below flowchart shows the logic of the web quiz app:
+
+![Flowchart](documentation/flowchart.png)
+
+---
+
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used to build the foundation of this website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) was used to format and style the website.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) was used to organise the items symmetrically on the website.
+- [JavaScript](https://www.w3schools.com/js/) was used to add interactivity and code functions needed to run the web quiz app.
+- [Canva](https://www.canva.com/) was used to create flowchart and wireframes for the website.
+- [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
+- [Git](https://git-scm.com/) was used for the version control of this website.
+- [GitHub](https://github.com/) was used to host the code of this website.
+
+---
+
+## Design
+
+### Colour Scheme
+
+![Colour palette](documentation/colour-palette.png)
+
+- The above colour palette was used for the colour scheme of the website. It is a colour gradient from beige (primary colour) to brown (secondary colour), reminiscent of the light and dark academia aesthetics, which are appropriate for a literary trivia quiz on the Harry Potter series.
+- Beige:
+    - Body background colour: #ddd5c6
+    - Footer background colour: #d0bfad
+    - Container background colour: #c3a894
+- Footer GitHub icon link colour: #b7927c
+- Brown:
+    - Answer buttons background colour: #aa7b63
+    - Start, next, and quit buttons background colour: #904e31
+- Green for correct answer: #26f42d
+- Red for wrong answer: #f40f0f
+
+### Typography
+
+The following family fonts have been imported from Google Fonts:
+
+- Crimson Text for h1 heading
+- Changa for h2 heading
+- Alegreya Sans for the rest of the elements (i.e., p, button, etc.)
+
+### Wireframes
