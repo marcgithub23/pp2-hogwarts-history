@@ -205,7 +205,7 @@ footer p,
     #answer-buttons button:hover:not([disabled]) {
         cursor: pointer;
         transform: scale(1.02);
-        transform: transform 100ms;
+        transition: transform 100ms;
         outline: solid #000;
         color: #000;
     }
@@ -225,7 +225,7 @@ footer p,
     .controls .btn:hover {
         cursor: pointer;
         transform: scale(1.02);
-        transform: transform 100ms;
+        transition: transform 100ms;
         outline: solid #000;
         color: #000;
     }
