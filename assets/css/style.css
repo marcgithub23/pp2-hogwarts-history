@@ -58,6 +58,19 @@ p {
     text-align: center;
 }
 
+.bold--uppercase {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
 .hide {
     display: none;
 }

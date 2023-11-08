@@ -187,9 +187,9 @@ function showScore() {
     } else if (percent === 100) {
         message = "you achieved a perfect grade, perfect job!";
     }
-    totalScoreElement.innerHTML = `Dear ${username},<br>
+    totalScoreElement.innerHTML = `Dear <span class="capitalize">${username}</span>,<br>
     Thank you for taking the quiz. Please find below your report card.<br>
-    Student: ${username}<br>
+    Student: <span class="capitalize">${username}</span><br>
     Total score: ${score} out of ${shuffledQuestions.length}<br>
     Percentage: ${percent}%<br>
     Overall, ${message}`;
