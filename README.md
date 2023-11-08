@@ -56,7 +56,7 @@ The website can be accessed by this [link](https://marcgithub23.github.io/pp2-ho
 
 - The display contains both header and footer as the home and quiz screens.
 - It contains a template literal message that includes the entered username, the total score achieved out of the total questions, the percentage, and a message depending on the grade achieved.
-- It contains a play again button that will restart the quiz, reshuffle the questions, and re-initialise the quiz progress and score to 1 and 0 respectively.
+- It contains a play again button that will restart the quiz, reshuffle the questions, and re-initialise the quiz progress and score.
 - It also contains a home button that will bring users back to the home screen.
 
 ---
@@ -176,7 +176,7 @@ In order to make a local copy of this project, you can clone it. In your IDE Ter
     - [How to Make a Quiz App using HTML CSS Javascript - Vanilla Javascript Project for Beginners Tutorial](https://www.youtube.com/watch?v=f4fB9Xg2JEY&list=WL&index=5) by [Brian Design](https://www.youtube.com/@briandesign)
 - This [Stack Overflow thread](https://stackoverflow.com/questions/44825305/how-to-center-text-vertically-if-line-break-occurs) was consulted for how to centre a heading vertically with a line break.
 - This [Stack Overflow thread](https://stackoverflow.com/questions/30035932/how-do-i-use-this-javascript-variable-in-html) was consulted for how to display a variable content in HTML using JavaScript.
-- The following have been consilted for how to validate username input field:
+- The following have been consulted for how to validate username input field:
     - [Check if string is Alphanumeric in JavaScript](https://javascript.plainenglish.io/check-if-string-is-alphanumeric-in-javascript-e325caa3ee) by Usman Haider
     - [Stack Overflow thread](https://stackoverflow.com/questions/13283470/regex-for-allowing-alphanumeric-and-space)
 - [W3Schools](https://www.w3schools.com/jsref/met_win_confirm.asp) for how to add a confirm message before executing a button's action.
@@ -192,7 +192,7 @@ In order to make a local copy of this project, you can clone it. In your IDE Ter
 - Add game categories with different sets of questions based on different book titles in the Harry Potter series.
 - Implement a count-up timer feature.
 - Compile all questions and answers in a JSON file.
-- Shuffle answers feature
+- Shuffle answers feature.
 
 ---
 

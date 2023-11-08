@@ -4,6 +4,20 @@
 
 The website was tested on Google Chrome and Safari web browsers to check functionality, responsiveness, and appearance.
 
+- Google Chrome:
+
+![Chrome home screen](documentation/chrome-home-screen1.png)
+![Chrome home screen with alert message](documentation/chrome-home-screen2.png)
+![Chrome quiz screen](documentation/chrome-quiz-screen.png)
+![Chrome results screen](documentation/chrome-results-screen.png)
+
+- Safari:
+
+![Safari home screen](documentation/safari-home-screen1.png)
+![Safari home screen with alert message](documentation/safari-home-screen2.png)
+![Safari quiz screen](documentation/safari-quiz-screen.png)
+![Safari results screen](documentation/safari-results-screen.png)
+
 ## Responsiveness
 
 The website was inspected using devtools to check its responsiveness, for example, the answer buttons on the quiz screen display split into two columns to make use of the extra space.
@@ -89,22 +103,22 @@ No errors or warnings were found when passing through the official JSHint valida
 - Play again button doesn't hide results screen.
     - Fix: initially reused startGame function, but had to create a new restartGame function to clear results screen.
 - The function handleNextButton doesn't work properly.
-    ![Issue 2](documentation/issue2.png)
+    - ![Issue 2](documentation/issue2.png)
     - Fix: initially used the wrong function showQuestion. Used the correct function setNextQuestion.
 - Question progress keeps counting over the total number of questions after clicking the play again button.
     - Fix: reset questionCounter to 0 within the restartGame function.
 - The code breaks and questions and answers don't show properly when moving numberOfQuestions.innerHTML above const questions.
     - Fix: put numberOfQuestions.innerHTML within a DOMContentLoaded event
 - HTML initial validation error.
-    ![HTML initial validation error](documentation/html-validation-error.png)
-    - Fix: replaced correct symbol for less than;
+    - ![HTML initial validation error](documentation/html-validation-error.png)
+    - Fix: replaced correct symbol for less than.
 - CSS initial validation error.
-    ![CSS initial validation error](documentation/css-validation-error.png)
-    - Fix: corrected typo.
+    - ![CSS initial validation error](documentation/css-validation-error.png)
+    - Fix: corrected typo from transform to transition.
 - JS initial validation error.
-    ![JS initial validation error](documentation/js-validation-error.png)
-    - Fix: add missing semi-colons and missing 0 in .5
+    - ![JS initial validation error](documentation/js-validation-error.png)
+    - Fix: add missing semicolons and missing 0 in .5.
 
 ### Unsolved bugs or issues:
 
-- There were no known bugs at the time of submission of this project.
+- There were no known bugs or issues at the time of submission of this project.
