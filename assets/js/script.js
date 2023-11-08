@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function validateInput() {
     username = this.value;
     // Credit: Usman Haider and Stack Overflow
-    const isValid = /^[a-zA-Z0-9 ]+$/.test(username.trim())
+    const isValid = /^[a-zA-Z0-9 ]+$/.test(username.trim());
     if (!isValid) {
-        alert("Invalid username. Please don't use special characters.")
+        alert("Invalid username. Please don't use special characters.");
     }
 }
 
@@ -72,7 +72,7 @@ function startGame() {
         homeScreen.classList.add('hide');
         quizScreen.classList.remove('hide');
         // Shuffle question order
-        shuffledQuestions = questions.sort(() => Math.random() - .5);
+        shuffledQuestions = questions.sort(() => Math.random() - 0.5);
         // Initialise question index, counter, and score to 0 at the start of quiz
         currentQuestionIndex = 0;
         questionCounter = 0;
@@ -88,7 +88,7 @@ function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
     questionCounter++;
-    questionProgress.innerText = `Question ${questionCounter} of ${shuffledQuestions.length}`
+    questionProgress.innerText = `Question ${questionCounter} of ${shuffledQuestions.length}`;
 }
 
 /**
@@ -110,7 +110,7 @@ function showQuestion(question) {
         // Add created buttons with inserted answer options to answer buttons div
         answerButtonsElement.appendChild(button);
         button.addEventListener('click', selectAnswer);
-    })
+    });
 }
 
 /**
@@ -202,7 +202,7 @@ function restartGame() {
     resultsScreen.classList.add('hide');
     quizScreen.classList.remove('hide');
     // Reshuffle questions
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     // Re-initialise question index, counter, and score to 0
     questionCounter = 0;
     currentQuestionIndex = 0;
@@ -322,4 +322,4 @@ const questions = [
             {text: "Dobby", correct: false}
         ]
     }
-]
+];
